@@ -10,6 +10,8 @@ import About from "./pages/About";
 import Skills from "./pages/Skills";
 import Experience from "./pages/Experience";
 import Contact from "./pages/Contact";
+import Project from "./pages/Project";
+
 
 function App() {
 
@@ -37,6 +39,9 @@ function App() {
       <About/>
 
       <Skills/>
+
+      <Project/>
+      
 
       <Experience/>
       <Contact/>

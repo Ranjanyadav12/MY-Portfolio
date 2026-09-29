@@ -1,0 +1,131 @@
+
+.projects {
+  padding: 70px 8%;
+  text-align: center;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: 0.3s ease;
+}
+
+.projects h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.projects-subtitle {
+  font-size: 15px;
+  color: var(--secondary-text);
+  margin-bottom: 35px;
+}
+
+.projects-container {
+  max-width: 900px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.project-card {
+  padding: 22px;
+
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+
+  text-align: left;
+  transition: 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 20px var(--glow-color);
+}
+
+.project-number {
+  color: var(--accent-color);
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.project-card h3 {
+  font-size: 19px;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.project-card p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--secondary-text);
+  margin-bottom: 15px;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-tech span {
+  padding: 7px 12px;
+
+  background: var(--tag-bg);
+  color: var(--text-color);
+
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+
+  font-size: 12px;
+  transition: 0.3s ease;
+}
+
+.project-tech span:hover {
+  background: var(--accent-color);
+  color: #ffffff;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  .projects {
+    padding: 55px 5%;
+  }
+
+  .projects h2 {
+    font-size: 30px;
+  }
+
+  .projects-subtitle {
+    font-size: 13px;
+    margin-bottom: 25px;
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .project-card {
+    padding: 18px;
+  }
+
+  .project-card h3 {
+    font-size: 17px;
+  }
+
+  .project-card p {
+    font-size: 12px;
+  }
+
+  .project-tech span {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+}
