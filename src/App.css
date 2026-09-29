@@ -1,0 +1,282 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================
+   DARK MODE
+========================================= */
+
+.dark {
+  --bg: #030b16;
+  --bg-secondary: #07111f;
+  --card: #0b1728;
+  --card-hover: #0e2038;
+
+  --text: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  --border: #1d2b40;
+  --border-light: #263851;
+
+  --blue: #3b82f6;
+  --blue-light: #60a5fa;
+
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+
+/* =========================================
+   LIGHT MODE
+========================================= */
+
+.light {
+  --bg: #f7f9fc;
+  --bg-secondary: #ffffff;
+  --card: #ffffff;
+  --card-hover: #f8fafc;
+
+  --text: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+
+  --border: #dbe3ef;
+  --border-light: #cbd5e1;
+
+  --blue: #2563eb;
+  --blue-light: #2563eb;
+
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+
+/* =========================================
+   ALL SECTIONS
+========================================= */
+
+.dark .home,
+.dark .about,
+.dark .skills-section,
+.dark .experience-section {
+  background: #030b16;
+}
+
+.light .home,
+.light .about,
+.light .skills-section,
+.light .experience-section {
+  background: #f7f9fc;
+}
+
+
+/* =========================================
+   LIGHT MODE - TEXT
+========================================= */
+
+/* Main headings */
+
+.light h1,
+.light h2,
+.light h3,
+.light h4,
+.light h5,
+.light h6 {
+  color: #0f172a !important;
+}
+
+
+/* Paragraphs */
+
+.light p {
+  color: #475569;
+}
+
+
+/* Small text */
+
+.light small {
+  color: #64748b;
+}
+
+
+/* Links */
+
+.light a {
+  color: #334155;
+}
+
+
+/* Blue text */
+
+.light .skills-heading p,
+.light .skills-title span,
+.light .exp-heading p,
+.light .exp-title span,
+.light .section-title p {
+  color: #2563eb !important;
+}
+
+
+/* =========================================
+   LIGHT MODE - CARDS
+========================================= */
+
+.light .skill-row,
+.light .journey-card,
+.light .quote-card,
+.light .technology-box,
+.light .info-item {
+  background: #ffffff !important;
+
+  border-color: #dbe3ef !important;
+
+  color: #0f172a;
+}
+
+
+/* =========================================
+   LIGHT MODE - CARD TEXT
+========================================= */
+
+.light .skill-row h3,
+.light .journey-card h4,
+.light .technology-box h4,
+.light .quote-card p,
+.light .info-item p,
+.light .info-item small,
+.light .row-heading h3 {
+  color: #0f172a !important;
+}
+
+
+.light .skill-row p,
+.light .journey-card p,
+.light .row-heading p,
+.light .company,
+.light .card-description,
+.light .institute {
+  color: #475569 !important;
+}
+
+
+/* =========================================
+   LIGHT MODE - TECHNOLOGY BOX
+========================================= */
+
+.light .technology-box {
+  background: #f8fafc !important;
+}
+
+.light .technology-box:hover {
+  background: #ffffff !important;
+  border-color: #2563eb !important;
+}
+
+
+/* =========================================
+   LIGHT MODE - QUOTE
+========================================= */
+
+.light .quote-card {
+  background: #ffffff !important;
+
+  box-shadow:
+    0 10px 35px rgba(15, 23, 42, 0.08);
+}
+
+.light .quote-icon {
+  color: #2563eb !important;
+}
+
+.light .quote-card span {
+  color: #475569 !important;
+}
+
+
+/* =========================================
+   LIGHT MODE - CODE CARD
+========================================= */
+
+.light .code-card {
+  background: #0b1728 !important;
+  color: #ffffff !important;
+
+  border-color: #263851 !important;
+
+  box-shadow:
+    0 15px 40px rgba(15, 23, 42, 0.18);
+}
+
+/* Code card text should stay light */
+
+.light .code-card .code-text {
+  color: #d8e2f0 !important;
+}
+
+.light .code-card .variable {
+  color: #f8fafc !important;
+}
+
+.light .code-card .property {
+  color: #60a5fa !important;
+}
+
+.light .code-card .string {
+  color: #4ade80 !important;
+}
+
+.light .code-card .keyword {
+  color: #c084fc !important;
+}
+
+
+/* =========================================
+   LIGHT MODE - BUTTONS
+========================================= */
+
+.light .about-btn {
+  color: white !important;
+  background: #2563eb !important;
+}
+
+.light .about-btn:hover {
+  background: #1d4ed8 !important;
+}
+
+
+/* =========================================
+   BORDERS
+========================================= */
+
+.light .about,
+.light .skills-section,
+.light .experience-section {
+  border-color: #dbe3ef !important;
+}

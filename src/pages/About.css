@@ -1,0 +1,279 @@
+/* =========================================
+   ABOUT
+========================================= */
+
+.about {
+  min-height: 650px;
+
+  padding: 90px 8%;
+
+  display: grid;
+
+  grid-template-columns:
+    1.4fr 0.9fr 0.9fr;
+
+  gap: 45px;
+
+  align-items: center;
+
+  background: #030b16;
+
+  border-top: 1px solid #1d2b40;
+}
+
+
+/* =========================================
+   SECTION TITLE
+========================================= */
+
+.section-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 25px;
+}
+
+.section-title span {
+  width: 35px;
+
+  height: 2px;
+
+  background: #3b82f6;
+}
+
+.section-title p {
+  margin: 0;
+
+  color: #60a5fa;
+
+  font-size: 15px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   ABOUT HEADING
+========================================= */
+
+.about-left h2 {
+  margin: 0 0 25px;
+
+  font-size: 38px;
+
+  line-height: 1.25;
+
+  color: #f8fafc;
+}
+
+.about-left h2 span {
+  color: #3b82f6;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.about-description {
+  max-width: 650px;
+
+  margin-bottom: 30px;
+
+  color: #94a3b8;
+
+  font-size: 17px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.about-btn {
+  border: none;
+
+  background: #2563eb;
+
+  color: white;
+
+  padding: 12px 20px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  transition: 0.3s;
+}
+
+.about-btn:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   INFO
+========================================= */
+
+.about-info {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.info-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 16px;
+
+  background: #07111f;
+
+  border: 1px solid #1d2b40;
+
+  border-radius: 12px;
+}
+
+.info-icon {
+  width: 45px;
+
+  height: 45px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid #3b82f6;
+
+  border-radius: 50%;
+
+  color: #60a5fa;
+
+  flex-shrink: 0;
+}
+
+.info-item small {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #64748b;
+}
+
+.info-item p {
+  margin: 0;
+
+  color: #e2e8f0;
+
+  font-size: 15px;
+}
+
+
+/* =========================================
+   QUOTE
+========================================= */
+
+.quote-card {
+  padding: 30px;
+
+  background: #07111f;
+
+  border: 1px solid #1d2b40;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.15);
+}
+
+.quote-icon {
+  font-size: 45px;
+
+  font-weight: bold;
+
+  color: #3b82f6;
+}
+
+.quote-card p {
+  color: #dbe4ef;
+
+  font-size: 17px;
+
+  line-height: 1.7;
+}
+
+.quote-line {
+  width: 40px;
+
+  height: 2px;
+
+  background: #3b82f6;
+
+  margin: 20px 0;
+}
+
+.quote-card span {
+  color: #94a3b8;
+
+  font-size: 14px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .about {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .quote-card {
+    grid-column: 1 / -1;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .about {
+    grid-template-columns: 1fr;
+
+    padding: 70px 5%;
+
+    gap: 30px;
+  }
+
+  .about-left h2 {
+    font-size: 30px;
+  }
+
+  .about-description {
+    font-size: 15px;
+  }
+
+  .quote-card {
+    grid-column: auto;
+  }
+}

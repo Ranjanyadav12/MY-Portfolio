@@ -53,6 +53,7 @@ const Home = () => {
 
 
          {/* image add krni hai */}
+         
         {/* <img
           src="/images/profile.png"
           alt="Ranjan"

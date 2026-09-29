@@ -80,6 +80,7 @@ margin-top: -90px;
 
   cursor: pointer;
   transition: 0.3s;
+  
 }
 
 .project-btn {
@@ -98,8 +99,19 @@ margin-top: -90px;
   background: transparent;
 
   border: 1px solid #4a5a76;
+  background: var(--input-bg);
 
-  color: white;
+color: var(--page-text);
+
+  
+}
+
+.light{
+  --page-text:#111111;
+}
+
+.Dark{
+  --page-text:#ffffff;
 }
 
 .download-btn:hover {
@@ -347,3 +359,64 @@ margin-top: -90px;
     font-size: 9px;
   }
 }
+
+/* =========================================
+   HOME LIGHT MODE
+========================================= */
+
+/* .light .home {
+  background: #f7f9fc;
+}
+
+.light .home h1 {
+  color: #0f172a !important;
+}
+
+.light .home h1 span {
+  color: #3b5bdb !important;
+}
+
+.light .home h2 {
+  color: #0f172a !important;
+}
+
+.light .home p {
+  color: #64748b !important;
+} */
+
+/* Badge */
+
+/* .light .home .badge {
+  background: #eaf2ff;
+  color: #2563eb;
+  border-color: #bfdbfe;
+} */
+
+
+/* Secondary button */
+
+/* .light .home .secondary-btn {
+  color: #475569 !important;
+  border-color: #64748b;
+  background: transparent;
+}
+
+.light .home .secondary-btn:hover {
+  color: #2563eb !important;
+  border-color: #2563eb;
+} */
+
+
+/* Social icons */
+
+/* .light .home .social-icons {
+  color: #64748b;
+}
+
+.light .home .social-icons a {
+  color: #64748b;
+}
+
+.light .home .social-icons a:hover {
+  color: #2563eb;
+} */

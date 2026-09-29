@@ -1,58 +1,134 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 
-const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(true);
+function Navbar({ darkMode, changeTheme }) {
 
-  const toggleTheme = () => {
-    setDarkMode(!darkMode);
-    document.body.classList.toggle("light-mode");
+  // Mobile menu open/close karne ke liye
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  // Mobile menu close karne ke liye
+  const closeMenu = () => {
+    setMenuOpen(false);
   };
 
   return (
+
     <nav className="navbar">
 
-      {/* Logo */}
+      {/* ================= LOGO ================= */}
+
       <div className="logo">
         <span>&lt;/&gt;</span> Ranjan
       </div>
 
-      {/* Desktop Menu */}
-      <div className={`nav-links ${menuOpen ? "open" : ""}`}>
-        <span className="active">Home</span>
-        <span>About</span>
-        <span>Skills</span>
-        <span>Projects</span>
-        <span>Experience</span>
-        <span>Education</span>
-        <span>Contact</span>
+
+      {/* ================= DESKTOP MENU ================= */}
+
+      <div className="nav-links">
+
+        <a href="#home">Home</a>
+
+        <a href="#about">About</a>
+
+        <a href="#skills">Skills</a>
+
+        <a href="#projects">Projects</a>
+
+        <a href="#experience">Experience</a>
+
+        <a href="#education">Education</a>
+
+        <a href="#contact">Contact</a>
+
       </div>
 
-      {/* Right Side */}
+
+      {/* ================= RIGHT SIDE ================= */}
+
       <div className="nav-right">
 
-        {/* Dark Mode */}
-        <button className="theme-btn" onClick={toggleTheme}>
-          {darkMode ? "☀" : "☾"}
-        </button>
+        {/* Light / Dark Button */}
 
-        {/* Resume */}
-        <button className="resume-btn">
-          Download Resume ↓
-        </button>
-
-        {/* Hamburger */}
         <button
-          className="menu-btn"
-          onClick={() => setMenuOpen(!menuOpen)}
+          className="theme-button"
+          onClick={changeTheme}
         >
-          ☰
+          {darkMode ? "☀️" : "🌙"}
+        </button>
+
+
+        {/* Resume Button */}
+
+        <button className="resume-button">
+          Download Resume
         </button>
 
       </div>
+
+
+      {/* ================= MOBILE MENU BUTTON ================= */}
+
+      <button
+        className="menu-button"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        ☰
+      </button>
+
+
+      {/* ================= MOBILE MENU ================= */}
+
+      {menuOpen && (
+
+        <div className="mobile-menu">
+
+          <a href="#home" onClick={closeMenu}>
+            Home
+          </a>
+
+          <a href="#about" onClick={closeMenu}>
+            About
+          </a>
+
+          <a href="#skills" onClick={closeMenu}>
+            Skills
+          </a>
+
+          <a href="#projects" onClick={closeMenu}>
+            Projects
+          </a>
+
+          <a href="#experience" onClick={closeMenu}>
+            Experience
+          </a>
+
+          <a href="#education" onClick={closeMenu}>
+            Education
+          </a>
+
+          <a href="#contact" onClick={closeMenu}>
+            Contact
+          </a>
+
+
+          {/* Mobile Theme Button */}
+
+          <button
+            className="mobile-theme-button"
+            onClick={changeTheme}
+          >
+            {darkMode
+              ? "☀️ Light Mode"
+              : "🌙 Dark Mode"
+            }
+          </button>
+
+        </div>
+
+      )}
+
     </nav>
   );
-};
+}
 
 export default Navbar;
