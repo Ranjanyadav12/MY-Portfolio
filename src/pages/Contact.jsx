@@ -1,11 +1,12 @@
-
 import React, { useState } from "react";
 import "./Contact.css";
 
 const Contact = () => {
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    subject: "",
     message: "",
   });
 
@@ -24,88 +25,213 @@ const Contact = () => {
     setFormData({
       name: "",
       email: "",
+      subject: "",
       message: "",
     });
   };
 
   return (
-    <section className="contact" id="contact">
+    <section className="contact-section" id="contact">
 
-      <h2>Contact Me</h2>
+      {/* Heading */}
+
+      <div className="contact-heading">
+        <span></span>
+        <p>Contact Me</p>
+      </div>
+
+      <h2 className="contact-title">
+        Let's <span>Work Together</span>
+      </h2>
 
       <p className="contact-subtitle">
-        Let's connect and build something amazing together.
+        Have a project idea, job opportunity, or just want to
+        say hello? Feel free to get in touch with me.
       </p>
+
+
+      {/* Main Contact Area */}
 
       <div className="contact-container">
 
-        {/* Left Side */}
-        <div className="contact-left">
+        {/* ================= LEFT ================= */}
+
+        <div className="contact-info">
 
           <h3>Get In Touch</h3>
 
-          <p>
-            I'm open to discussing new projects, internships,
-            job opportunities and collaborations.
+          <p className="contact-description">
+            I'm always open to discussing new projects,
+            development opportunities and interesting ideas.
           </p>
 
-          <div className="contact-details">
 
-            <div className="contact-detail">
-              <span>✉</span>
-              <div>
-                <h4>Email</h4>
-                <p>piyushsharma777896@gmail.com</p>
-              </div>
+          {/* Email */}
+
+          <div className="contact-item">
+
+            <div className="contact-icon">
+              ✉
             </div>
 
-            <div className="contact-detail">
-              <span>📍</span>
-              <div>
-                <h4>Location</h4>
-                <p>Faridabad, Haryana</p>
-              </div>
+            <div>
+              <small>Email</small>
+              <p>your-email@gmail.com</p>
+            </div>
+
+          </div>
+
+
+          {/* Location */}
+
+          <div className="contact-item">
+
+            <div className="contact-icon">
+              📍
+            </div>
+
+            <div>
+              <small>Location</small>
+              <p>India</p>
+            </div>
+
+          </div>
+
+
+          {/* Availability */}
+
+          <div className="contact-item">
+
+            <div className="contact-icon">
+              💼
+            </div>
+
+            <div>
+              <small>Availability</small>
+              <p>Open to opportunities</p>
+            </div>
+
+          </div>
+
+
+          {/* Social */}
+
+          <div className="contact-social">
+
+            <p>Connect With Me</p>
+
+            <div className="social-buttons">
+
+              <a href="#" aria-label="GitHub">
+                GitHub
+              </a>
+
+              <a href="#" aria-label="LinkedIn">
+                LinkedIn
+              </a>
+
+              <a href="#" aria-label="Instagram">
+                Instagram
+              </a>
+
             </div>
 
           </div>
 
         </div>
 
-        {/* Right Side */}
-        <form className="contact-form" onSubmit={handleSubmit}>
 
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
+        {/* ================= RIGHT ================= */}
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
+        <div className="contact-form-box">
 
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            rows="5"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          ></textarea>
+          <h3>Send Me a Message</h3>
 
-          <button type="submit">
-            Send Message
-          </button>
+          <form onSubmit={handleSubmit}>
 
-        </form>
+            {/* Name */}
+
+            <div className="form-group">
+
+              <label>Your Name</label>
+
+              <input
+                type="text"
+                name="name"
+                placeholder="Enter your name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+
+            </div>
+
+
+            {/* Email */}
+
+            <div className="form-group">
+
+              <label>Email Address</label>
+
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+
+            </div>
+
+
+            {/* Subject */}
+
+            <div className="form-group">
+
+              <label>Subject</label>
+
+              <input
+                type="text"
+                name="subject"
+                placeholder="Enter subject"
+                value={formData.subject}
+                onChange={handleChange}
+              />
+
+            </div>
+
+
+            {/* Message */}
+
+            <div className="form-group">
+
+              <label>Message</label>
+
+              <textarea
+                name="message"
+                placeholder="Write your message..."
+                value={formData.message}
+                onChange={handleChange}
+                rows="5"
+                required
+              ></textarea>
+
+            </div>
+
+
+            {/* Submit */}
+
+            <button
+              type="submit"
+              className="send-button"
+            >
+              Send Message →
+            </button>
+
+          </form>
+
+        </div>
 
       </div>
 
@@ -114,4 +240,3 @@ const Contact = () => {
 };
 
 export default Contact;
-

@@ -1,329 +1,372 @@
 /* =========================================
-   SKILLS
+   SKILLS SECTION
 ========================================= */
 
 .skills-section {
-  padding: 90px 8%;
+  width: 100%;
+  padding: 90px 24px;
 
   background: #030b16;
 
   border-top: 1px solid #1d2b40;
+
+  color: #ffffff;
 }
 
 
-/* Heading */
+/* =========================================
+   HEADING
+========================================= */
 
 .skills-heading {
+  max-width: 1410px;
+  margin: 0 auto 15px;
+
   display: flex;
-
   align-items: center;
-
-  gap: 10px;
-
-  margin-bottom: 12px;
+  gap: 12px;
 }
 
 .skills-heading span {
   width: 35px;
-
   height: 2px;
 
-  background: #3b82f6;
+  background: #00d9ff;
 }
 
 .skills-heading p {
-  color: #60a5fa;
+  margin: 0;
+
+  color: #00d9ff;
 
   font-size: 15px;
-
   font-weight: 600;
-
-  margin: 0;
 }
 
 
-/* Title */
+/* =========================================
+   MAIN TITLE
+========================================= */
 
 .skills-title {
-  margin: 0;
+  max-width: 1410px;
+  margin: 0 auto;
 
-  font-size: 38px;
+  color: #ffffff;
 
-  color: #f8fafc;
+  font-size: 40px;
+  line-height: 1.2;
 }
 
 .skills-title span {
-  color: #3b82f6;
+  color: #00d9ff;
 }
+
+
+/* =========================================
+   SUBTITLE
+========================================= */
 
 .skills-subtitle {
   max-width: 700px;
 
-  margin: 15px 0 45px;
+  margin: 15px auto 50px;
 
   color: #94a3b8;
 
   font-size: 16px;
-
   line-height: 1.7;
 }
 
 
 /* =========================================
-   SKILL ROW
+   SKILLS GRID
 ========================================= */
 
-.skill-row {
-  width: 100%;
+.skills-grid {
+  max-width: 1410px;
 
-  padding: 28px;
+  margin: 0 auto;
 
-  margin-bottom: 25px;
+  display: grid;
 
-  background: #07111f;
+  grid-template-columns: 1fr 1fr;
 
-  border: 1px solid #1d2b40;
-
-  border-radius: 18px;
-
-  transition: 0.3s;
+  gap: 28px;
 }
 
-.skill-row:hover {
-  border-color: #3b82f6;
+
+/* =========================================
+   SKILL CARD
+========================================= */
+
+.skill-card {
+  min-height: 267px;
+
+  padding: 32px 34px;
+
+  background: #020a19;
+
+  border: 1px solid #1d3857;
+
+  border-radius: 20px;
+
+  transition: all 0.3s ease;
+}
+
+
+/* Hover */
+
+.skill-card:hover {
+  border-color: #00d9ff;
 
   transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 35px rgba(0, 217, 255, 0.08);
 }
 
 
-/* Row heading */
+/* =========================================
+   ICON
+========================================= */
 
-.row-heading {
-  display: flex;
-
-  align-items: center;
-
-  gap: 16px;
-
-  margin-bottom: 25px;
-}
-
-.row-icon {
-  width: 55px;
-
-  height: 55px;
+.skill-icon {
+  width: 68px;
+  height: 68px;
 
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
-  background: #0d1b30;
+  margin-bottom: 22px;
 
-  border: 1px solid #263851;
+  background: #03182a;
 
-  border-radius: 13px;
+  border: 1px solid #07516b;
 
-  font-size: 24px;
+  border-radius: 16px;
+
+  color: #00d9ff;
+
+  font-size: 27px;
+
+  font-weight: 600;
 }
 
-.row-heading h3 {
-  margin: 0 0 5px;
 
-  color: #f8fafc;
+/* =========================================
+   TITLE
+========================================= */
 
-  font-size: 22px;
+.skill-card h3 {
+  margin: 0 0 12px;
+
+  color: #ffffff;
+
+  font-size: 27px;
+
+  font-weight: 700;
 }
 
-.row-heading p {
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.skill-card > p {
   margin: 0;
 
   color: #8fa0b5;
 
-  font-size: 14px;
+  font-size: 17px;
+
+  line-height: 1.5;
 }
 
 
-/* Technology */
+/* =========================================
+   PROGRESS SECTION
+========================================= */
 
-.technology-container {
-  display: grid;
-
-  grid-template-columns:
-    repeat(5, 1fr);
-
-  gap: 15px;
-}
-
-.technology-box {
-  min-height: 125px;
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  justify-content: center;
-
-  padding: 15px;
-
-  background: #0b1728;
-
-  border: 1px solid #263851;
-
-  border-radius: 13px;
-
-  text-align: center;
-
-  transition: 0.3s;
-}
-
-.technology-box:hover {
-  transform: translateY(-5px);
-
-  border-color: #3b82f6;
-
-  background: #0e2038;
-}
-
-.technology-icon {
-  width: 48px;
-
-  height: 48px;
-
+.progress-section {
   display: flex;
 
   align-items: center;
 
-  justify-content: center;
+  gap: 18px;
 
-  margin-bottom: 10px;
-
-  border-radius: 11px;
-
-  font-size: 14px;
-
-  font-weight: bold;
-  color: #8fa0b5;
-}
-
-.technology-box h4 {
-  margin: 0 0 5px;
-
-  color: #e2e8f0;
-
-  font-size: 15px;
-}
-
-.technology-box span {
-  color: #60a5fa;
-
-  font-size: 12px;
+  margin-top: 30px;
 }
 
 
-/* Icon colors */
+/* Progress bar */
 
-.html-icon {
-  background: #351a14;
-  color: #f97316;
-}
+.progress-bar {
+  flex: 1;
 
-.css-icon {
-  background: #142a45;
-  color: #38bdf8;
-}
+  height: 6px;
 
-.js-icon {
-  background: #39320d;
-  color: #facc15;
-}
+  overflow: hidden;
 
-.react-icon {
-  background: #102d3a;
-  color: #61dafb;
-  font-size: 28px;
-}
+  background: #14243a;
 
-.node-icon {
-  background: #122b1b;
-  color: #4ade80;
-}
-
-.express-icon {
-  background: #20252d;
-  color: #e2e8f0;
-}
-
-.api-icon {
-  background: #17264a;
-  color: #60a5fa;
-}
-
-.mongo-icon {
-  background: #102d20;
-  color: #4ade80;
-}
-
-.mysql-icon {
-  background: #172b3d;
-  color: #38bdf8;
-}
-
-.git-icon {
-  background: #351b15;
-  color: #f97316;
-}
-
-.github-icon {
-  background: #202532;
-  color: #f8fafc;
-}
-
-.vscode-icon {
-  background: #102a43;
-  color: #38bdf8;
-}
-
-.python-icon {
-  background: #252c18;
-  color: #facc15;
-}
-
-.cpp-icon {
-  background: #182c45;
-  color: #60a5fa;
+  border-radius: 20px;
 }
 
 
+/* Progress fill */
+
+.progress-fill {
+  height: 100%;
+
+  background: #00d9ff;
+
+  border-radius: 20px;
+}
 
 
-/* Mobile */
+/* Percentage */
+
+.progress-section span {
+  min-width: 38px;
+
+  color: #00d9ff;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  text-align: right;
+}
+
+
+/* =========================================
+   LIGHT MODE
+========================================= */
+
+.light .skills-section {
+  background: #f7f9fc;
+
+  color: #0f172a;
+}
+
+.light .skills-title {
+  color: #0f172a;
+}
+
+.light .skills-title span {
+  color: #2563eb;
+}
+
+.light .skills-subtitle {
+  color: #475569;
+}
+
+.light .skill-card {
+  background: #ffffff;
+
+  border-color: #dbe3ef;
+
+  box-shadow:
+    0 5px 20px rgba(15, 23, 42, 0.04);
+}
+
+.light .skill-card:hover {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 10px 30px rgba(37, 99, 235, 0.08);
+}
+
+.light .skill-icon {
+  background: #eff6ff;
+
+  border-color: #bfdbfe;
+
+  color: #2563eb;
+}
+
+.light .skill-card h3 {
+  color: #0f172a;
+}
+
+.light .skill-card > p {
+  color: #475569;
+}
+
+.light .progress-bar {
+  background: #dbeafe;
+}
+
+.light .progress-fill {
+  background: #2563eb;
+}
+
+.light .progress-section span {
+  color: #2563eb;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
 
 @media (max-width: 900px) {
 
-  .technology-container {
-    grid-template-columns: repeat(3, 1fr);
+  .skills-grid {
+    grid-template-columns: 1fr;
   }
+
 }
+
+
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 600px) {
 
   .skills-section {
-    padding: 70px 5%;
+    padding: 70px 18px;
   }
 
   .skills-title {
-    font-size: 30px;
+    font-size: 31px;
   }
 
-  .skill-row {
-    padding: 20px;
+  .skills-subtitle {
+    font-size: 14px;
+
+    margin-bottom: 35px;
   }
 
-  .technology-container {
-    grid-template-columns: repeat(2, 1fr);
+  .skill-card {
+    min-height: auto;
+
+    padding: 25px 22px;
+
+    border-radius: 16px;
   }
+
+  .skill-icon {
+    width: 58px;
+    height: 58px;
+
+    font-size: 23px;
+  }
+
+  .skill-card h3 {
+    font-size: 23px;
+  }
+
+  .skill-card > p {
+    font-size: 14px;
+  }
+
+  .progress-section {
+    margin-top: 25px;
+  }
+
 }
