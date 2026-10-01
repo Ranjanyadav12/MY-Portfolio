@@ -20,7 +20,31 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    alert("Message sent successfully!");
+
+
+    // Check empty fields
+    if (!formData.name || !formData.email || !formData.subject) {
+      alert("Please fill all the fields.");
+      return;
+    }
+
+    // WhatsApp message
+    const message = `Hello Vishal,
+
+I would like to contact you regarding your portfolio.
+
+Name: ${formData.name}
+Email: ${formData.email}
+Subject: ${formData.subject}`;
+
+    // WhatsApp URL
+    const whatsappURL =
+      `https://wa.me/918860433918?text=${encodeURIComponent(message)}`;
+
+    // Open WhatsApp
+    window.open(whatsappURL, "_blank");
+
+  
 
     setFormData({
       name: "",
@@ -76,7 +100,7 @@ const Contact = () => {
 
             <div>
               <small>Email</small>
-              <p>your-email@gmail.com</p>
+              <p>ranjanyadav3124@gmail.com</p>
             </div>
 
           </div>
@@ -226,7 +250,7 @@ const Contact = () => {
               type="submit"
               className="send-button"
             >
-              Send Message →
+              Send Message on   Whatsapp →
             </button>
 
           </form>

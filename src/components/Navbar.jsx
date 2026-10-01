@@ -1,127 +1,161 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 
-function Navbar({ darkMode, changeTheme }) {
+const Navbar = ({ darkMode, changeTheme }) => {
 
-  // Mobile menu open/close karne ke liye
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
-  // Mobile menu close karne ke liye
-  const closeMenu = () => {
+  const sections = [
+    "home",
+    "about",
+    "skills",
+    "projects",
+    "experience",
+    // "education",
+    "contact",
+  ];
+
+  useEffect(() => {
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+
+        entries.forEach((entry) => {
+
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+
+        });
+
+      },
+      {
+        root: null,
+        threshold: 0.25,
+      }
+    );
+
+    sections.forEach((section) => {
+
+      const element = document.getElementById(section);
+
+      if (element) {
+        observer.observe(element);
+      }
+
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+
+  }, []);
+
+  
+  const scrollToSection = (section) => {
+
+    const element = document.getElementById(section);
+
+    if (element) {
+
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+
+    }
+
     setMenuOpen(false);
   };
 
-  return (
 
+  return (
     <nav className="navbar">
 
-      {/* ================= LOGO ================= */}
+      {/* Logo */}
 
-      <div className="logo">
+      <div
+        className="navbar-logo"
+        onClick={() => scrollToSection("home")}
+      >
         <span>&lt;/&gt;</span> Ranjan
       </div>
 
 
-      {/* ================= DESKTOP MENU ================= */}
+      {/* Desktop Menu */}
 
       <div className="nav-links">
 
-        <a href="#home">Home</a>
+        {sections.map((section) => (
 
-        <a href="#about">About</a>
+          <button
+            key={section}
+            className={
+              activeSection === section
+                ? "nav-link active"
+                : "nav-link"
+            }
+            onClick={() => scrollToSection(section)}
+          >
+            {section.charAt(0).toUpperCase() + section.slice(1)}
+          </button>
 
-        <a href="#skills">Skills</a>
-
-        <a href="#projects">Projects</a>
-
-        <a href="#experience">Experience</a>
-
-        <a href="#education">Education</a>
-
-        <a href="#contact">Contact</a>
+        ))}
 
       </div>
 
 
-      {/* ================= RIGHT SIDE ================= */}
+      {/* Right Buttons */}
 
-      <div className="nav-right">
-
-        {/* Light / Dark Button */}
+      <div className="nav-actions">
 
         <button
-          className="theme-button"
+          className="theme-btn"
           onClick={changeTheme}
+          title="Change Theme"
         >
-          {darkMode ? "☀️" : "🌙"}
+          {darkMode ? "☀" : "☾"}
         </button>
 
-
-        {/* Resume Button */}
-
-        <button className="resume-button">
+        <button className="resume-btn">
           Download Resume
         </button>
 
       </div>
 
 
-      {/* ================= MOBILE MENU BUTTON ================= */}
+      {/* Mobile Menu Button */}
 
       <button
-        className="menu-button"
+        className="menu-btn"
         onClick={() => setMenuOpen(!menuOpen)}
       >
         ☰
       </button>
 
 
-      {/* ================= MOBILE MENU ================= */}
+      {/* Mobile Menu */}
 
       {menuOpen && (
 
         <div className="mobile-menu">
 
-          <a href="#home" onClick={closeMenu}>
-            Home
-          </a>
+          {sections.map((section) => (
 
-          <a href="#about" onClick={closeMenu}>
-            About
-          </a>
+            <button
+              key={section}
+              className={
+                activeSection === section
+                  ? "mobile-link active"
+                  : "mobile-link"
+              }
+              onClick={() => scrollToSection(section)}
+            >
+              {section.charAt(0).toUpperCase() + section.slice(1)}
+            </button>
 
-          <a href="#skills" onClick={closeMenu}>
-            Skills
-          </a>
-
-          <a href="#projects" onClick={closeMenu}>
-            Projects
-          </a>
-
-          <a href="#experience" onClick={closeMenu}>
-            Experience
-          </a>
-
-          <a href="#education" onClick={closeMenu}>
-            Education
-          </a>
-
-          <a href="#contact" onClick={closeMenu}>
-            Contact
-          </a>
-
-
-          {/* Mobile Theme Button */}
-
-          <button
-            className="mobile-theme-button"
-            onClick={changeTheme}
-          >
-            {darkMode
-              ? "☀️ Light Mode"
-              : "🌙 Dark Mode"
-            }
-          </button>
+          ))}
 
         </div>
 
@@ -129,6 +163,6 @@ function Navbar({ darkMode, changeTheme }) {
 
     </nav>
   );
-}
+};
 
 export default Navbar;

@@ -5,12 +5,13 @@ import React, { useState } from "react";
 
 import "./App.css";
 import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
+
 import About from "./pages/About";
 import Skills from "./pages/Skills";
 import Experience from "./pages/Experience";
 import Contact from "./pages/Contact";
 import Project from "./pages/Project";
+import Home from "./pages/Home";
 
 
 function App() {
@@ -32,6 +33,8 @@ function App() {
       <Navbar
        darkMode={darkMode}
         changeTheme={changeTheme}/>
+
+
 
 
       <Home/>
