@@ -29,7 +29,7 @@ const Contact = () => {
     }
 
     // WhatsApp message
-    const message = `Hello Vishal,
+    const message = `Hello Ranjan,
 
 I would like to contact you regarding your portfolio.
 

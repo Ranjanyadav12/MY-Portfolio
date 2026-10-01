@@ -2,6 +2,17 @@ import React from "react";
 import "./About.css";
 
 const About = () => {
+
+  const goToContact = () => {
+    const section = document.getElementById("contact");
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
   return (
     <section className="about" id="about">
 
@@ -26,7 +37,8 @@ const About = () => {
           code, and continuously learning new technologies.
         </p>
 
-        <button className="about-btn">
+        <button className="about-btn"
+        onClick={goToContact}>
           Contact Me →
         </button>
 
