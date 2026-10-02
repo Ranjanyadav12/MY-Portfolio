@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 
 const Navbar = ({ darkMode, changeTheme }) => {
-
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
@@ -16,65 +15,53 @@ const Navbar = ({ darkMode, changeTheme }) => {
     "contact",
   ];
 
+  // Scroll karne par active section change hoga
   useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 150;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
+      sections.forEach((section) => {
+        const element = document.getElementById(section);
 
-        entries.forEach((entry) => {
+        if (element) {
+          const top = element.offsetTop;
+          const height = element.offsetHeight;
 
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
+          if (
+            scrollPosition >= top &&
+            scrollPosition < top + height
+          ) {
+            setActiveSection(section);
           }
-
-        });
-
-      },
-      {
-        root: null,
-        threshold: 0.25,
-      }
-    );
-
-    sections.forEach((section) => {
-
-      const element = document.getElementById(section);
-
-      if (element) {
-        observer.observe(element);
-      }
-
-    });
-
-    return () => {
-      observer.disconnect();
+        }
+      });
     };
 
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
-  
+  // Section par smooth scroll
   const scrollToSection = (section) => {
-
     const element = document.getElementById(section);
 
     if (element) {
-
       element.scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
-
     }
 
     setMenuOpen(false);
   };
 
-
   return (
     <nav className="navbar">
 
       {/* Logo */}
-
       <div
         className="navbar-logo"
         onClick={() => scrollToSection("home")}
@@ -82,13 +69,9 @@ const Navbar = ({ darkMode, changeTheme }) => {
         <span>&lt;/&gt;</span> Ranjan
       </div>
 
-
       {/* Desktop Menu */}
-
       <div className="nav-links">
-
         {sections.map((section) => (
-
           <button
             key={section}
             className={
@@ -100,16 +83,13 @@ const Navbar = ({ darkMode, changeTheme }) => {
           >
             {section.charAt(0).toUpperCase() + section.slice(1)}
           </button>
-
         ))}
-
       </div>
 
-
-      {/* Right Buttons */}
-
+      {/* Right Side */}
       <div className="nav-actions">
 
+        {/* Theme Button */}
         <button
           className="theme-btn"
           onClick={changeTheme}
@@ -118,15 +98,14 @@ const Navbar = ({ darkMode, changeTheme }) => {
           {darkMode ? "☀" : "☾"}
         </button>
 
+        {/* Resume */}
         <button className="resume-btn">
           Download Resume
         </button>
 
       </div>
 
-
       {/* Mobile Menu Button */}
-
       <button
         className="menu-btn"
         onClick={() => setMenuOpen(!menuOpen)}
@@ -134,15 +113,11 @@ const Navbar = ({ darkMode, changeTheme }) => {
         ☰
       </button>
 
-
       {/* Mobile Menu */}
-
       {menuOpen && (
-
         <div className="mobile-menu">
 
           {sections.map((section) => (
-
             <button
               key={section}
               className={
@@ -152,13 +127,19 @@ const Navbar = ({ darkMode, changeTheme }) => {
               }
               onClick={() => scrollToSection(section)}
             >
-              {section.charAt(0).toUpperCase() + section.slice(1)}
+              {section.charAt(0).toUpperCase() +
+                section.slice(1)}
             </button>
-
           ))}
 
-        </div>
+          <button
+            className="mobile-theme-btn"
+            onClick={changeTheme}
+          >
+            {darkMode ? "☀ Light Mode" : "☾ Dark Mode"}
+          </button>
 
+        </div>
       )}
 
     </nav>

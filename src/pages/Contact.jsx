@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./Contact.css";
 
 const Contact = () => {
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -19,6 +18,8 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    
 
 
 
@@ -44,8 +45,6 @@ Subject: ${formData.subject}`;
     // Open WhatsApp
     window.open(whatsappURL, "_blank");
 
-  
-
     setFormData({
       name: "",
       email: "",
@@ -58,7 +57,6 @@ Subject: ${formData.subject}`;
     <section className="contact-section" id="contact">
 
       {/* Heading */}
-
       <div className="contact-heading">
         <span></span>
         <p>Contact Me</p>
@@ -73,13 +71,9 @@ Subject: ${formData.subject}`;
         say hello? Feel free to get in touch with me.
       </p>
 
-
-      {/* Main Contact Area */}
-
       <div className="contact-container">
 
-        {/* ================= LEFT ================= */}
-
+        {/* Left Side */}
         <div className="contact-info">
 
           <h3>Get In Touch</h3>
@@ -89,63 +83,51 @@ Subject: ${formData.subject}`;
             development opportunities and interesting ideas.
           </p>
 
-
           {/* Email */}
-
           <div className="contact-item">
-
-            <div className="contact-icon">
-              ✉
-            </div>
+            <div className="contact-icon">✉</div>
 
             <div>
               <small>Email</small>
               <p>ranjanyadav3124@gmail.com</p>
             </div>
-
           </div>
 
+          {/* Phone Number */}
+          <div className="contact-item">
+            <div className="contact-icon">☎</div>
+
+            <div>
+              <small>Phone</small>
+              <p>+91 8860433918</p>
+            </div>
+          </div>
 
           {/* Location */}
-
           <div className="contact-item">
-
-            <div className="contact-icon">
-              📍
-            </div>
+            <div className="contact-icon">📍</div>
 
             <div>
               <small>Location</small>
               <p>India</p>
             </div>
-
           </div>
 
-
           {/* Availability */}
-
           <div className="contact-item">
-
-            <div className="contact-icon">
-              💼
-            </div>
+            <div className="contact-icon">💼</div>
 
             <div>
               <small>Availability</small>
               <p>Open to opportunities</p>
             </div>
-
           </div>
 
-
           {/* Social */}
-
           <div className="contact-social">
-
             <p>Connect With Me</p>
 
             <div className="social-buttons">
-
               <a href="#" aria-label="GitHub">
                 GitHub
               </a>
@@ -157,26 +139,19 @@ Subject: ${formData.subject}`;
               <a href="#" aria-label="Instagram">
                 Instagram
               </a>
-
             </div>
-
           </div>
 
         </div>
 
-
-        {/* ================= RIGHT ================= */}
-
+        {/* Right Side Form */}
         <div className="contact-form-box">
 
           <h3>Send Me a Message</h3>
 
           <form onSubmit={handleSubmit}>
 
-            {/* Name */}
-
             <div className="form-group">
-
               <label>Your Name</label>
 
               <input
@@ -187,14 +162,9 @@ Subject: ${formData.subject}`;
                 onChange={handleChange}
                 required
               />
-
             </div>
 
-
-            {/* Email */}
-
             <div className="form-group">
-
               <label>Email Address</label>
 
               <input
@@ -205,14 +175,9 @@ Subject: ${formData.subject}`;
                 onChange={handleChange}
                 required
               />
-
             </div>
 
-
-            {/* Subject */}
-
             <div className="form-group">
-
               <label>Subject</label>
 
               <input
@@ -222,14 +187,9 @@ Subject: ${formData.subject}`;
                 value={formData.subject}
                 onChange={handleChange}
               />
-
             </div>
 
-
-            {/* Message */}
-
             <div className="form-group">
-
               <label>Message</label>
 
               <textarea
@@ -240,17 +200,10 @@ Subject: ${formData.subject}`;
                 rows="5"
                 required
               ></textarea>
-
             </div>
 
-
-            {/* Submit */}
-
-            <button
-              type="submit"
-              className="send-button"
-            >
-              Send Message on   Whatsapp →
+            <button type="submit" className="send-button">
+              Send Message →
             </button>
 
           </form>
@@ -258,7 +211,6 @@ Subject: ${formData.subject}`;
         </div>
 
       </div>
-
     </section>
   );
 };
