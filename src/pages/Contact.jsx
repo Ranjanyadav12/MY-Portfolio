@@ -97,10 +97,12 @@ Subject: ${formData.subject}`;
           <div className="contact-item">
             <div className="contact-icon">☎</div>
 
-            <div>
+           <a href="tel:+918860433918"
+           style={{textDecoration:"none"}}> <div>
               <small>Phone</small>
               <p>+91 8860433918</p>
             </div>
+            </a>
           </div>
 
           {/* Location */}

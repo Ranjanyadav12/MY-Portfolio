@@ -8,44 +8,40 @@ const Projects = () => {
       category: "WEB DEVELOPMENT",
       title: "Amazon Webpage UI Clone",
       description:
-        "A responsive UI clone of the Amazon homepage built using HTML and CSS. This project focuses on layout design, flexbox, and modern styling techniques.",
+        "A responsive Amazon homepage UI clone created using HTML and CSS with a clean and modern layout.",
       technologies: ["HTML", "CSS"],
-      github: "#",
       live: "#",
+      github: "#",
     },
-
     {
       image: "/images/labour.png",
       category: "WEB APPLICATION",
       title: "Labour Job Finder",
       description:
-        "A job finding platform designed to help workers discover suitable jobs and connect with potential employers.",
+        "A job finding platform that helps labourers find suitable jobs and allows employers to connect with workers.",
       technologies: ["HTML", "CSS", "JavaScript", "React"],
-      github: "#",
       live: "#",
-      private: true,
+      github: "#",
     },
-
     {
       image: "/images/gaming.png",
       category: "E-COMMERCE",
       title: "Gaming Store",
       description:
-        "A modern gaming store interface with products, categories and a responsive user-friendly design.",
+        "A modern gaming store interface with product sections, categories and a responsive user-friendly design.",
       technologies: ["React", "CSS", "JavaScript"],
-      github: "#",
       live: "#",
+      github: "#",
     },
-
     {
       image: "/images/education.png",
       category: "WEB DESIGN",
-      title: "Ambience Complete Education – Website Clone",
+      title: "Education Website Clone",
       description:
-        "Developed a responsive educational website clone with modern UI, course sections, navigation, and interactive components.",
+        "A responsive educational website clone with modern UI, navigation, course sections and interactive components.",
       technologies: ["React", "CSS", "JavaScript"],
-      github: "#",
       live: "#",
+      github: "#",
     },
   ];
 
@@ -53,8 +49,8 @@ const Projects = () => {
     <section className="projects-section" id="projects">
 
       {/* Heading */}
-
       <div className="projects-heading">
+        <span></span>
         <p>MY WORK</p>
       </div>
 
@@ -67,29 +63,21 @@ const Projects = () => {
         and improving my development skills.
       </p>
 
-
       {/* Projects */}
-
       <div className="projects-grid">
 
         {projects.map((project, index) => (
-
           <div className="project-card" key={index}>
 
             {/* Image */}
-
             <div className="project-image">
-
               <img
                 src={project.image}
                 alt={project.title}
               />
-
             </div>
 
-
             {/* Content */}
-
             <div className="project-content">
 
               <span className="project-category">
@@ -102,52 +90,36 @@ const Projects = () => {
                 {project.description}
               </p>
 
-
               {/* Technologies */}
-
               <div className="project-technologies">
-
-                {project.technologies.map((technology, techIndex) => (
-                  <span key={techIndex}>
+                {project.technologies.map((technology, index) => (
+                  <span key={index}>
                     {technology}
                   </span>
                 ))}
-
               </div>
 
-
               {/* Buttons */}
-
               <div className="project-buttons">
 
-                {!project.private && (
-                  <a
-                    href={project.live}
-                    className="live-button"
-                  >
-                    ↗ Live Demo
-                  </a>
-                )}
-
-                {project.private && (
-                  <button className="private-button">
-                    🔒 Private Startup Project
-                  </button>
-                )}
+                <a
+                  href={project.live}
+                  className="live-button"
+                >
+                  ↗ Live Demo
+                </a>
 
                 <a
                   href={project.github}
                   className="github-button"
                 >
-                  ⚭ GitHub
+                  GitHub
                 </a>
 
               </div>
 
             </div>
-
           </div>
-
         ))}
 
       </div>

@@ -270,6 +270,10 @@
   justify-content: center;
 
   position: relative;
+
+  background: var(--input-bg);
+
+color: var(--page-text);
 }
 
 
@@ -543,6 +547,9 @@
 
   .home-right {
     min-height: 380px;
+    background: var(--input-bg);
+
+    color: var(--page-text);
   }
 
 }
@@ -608,6 +615,10 @@
   .home-right {
     min-height: 300px;
 
+    background: var(--input-bg);
+
+
+    color: var(--page-text);
     width: 100%;
   }
 

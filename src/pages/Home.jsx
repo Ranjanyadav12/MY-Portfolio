@@ -2,6 +2,16 @@ import React from "react";
 import "./Home.css";
 
 const Home = () => {
+   const goToProjects = () => {
+    const section = document.getElementById("projects");
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
   return (
     <section className="home" id="home">
 
@@ -31,7 +41,8 @@ const Home = () => {
         {/* Buttons */}
         <div className="home-buttons">
 
-          <button className="primary-btn">
+          <button className="primary-btn"
+          onClick={goToProjects}>
             View My Projects →
           </button>
 

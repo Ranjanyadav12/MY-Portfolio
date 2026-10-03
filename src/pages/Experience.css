@@ -151,6 +151,10 @@
   font-size: 12px;
 
   white-space: nowrap;
+
+  background: var(--input-bg);
+
+color: var(--page-text);
 }
 
 
@@ -232,5 +236,8 @@
 
   .date {
     align-self: flex-start;
+    background: var(--input-bg);
+
+color: var(--page-text);
   }
 }
