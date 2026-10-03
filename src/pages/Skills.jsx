@@ -1,5 +1,5 @@
 import React from "react";
-import "./skills.css";
+import "./Skills.css";
 
 const Skills = () => {
   const skills = [
@@ -18,14 +18,14 @@ const Skills = () => {
       width: "85%",
     },
     {
-      icon: "</>",
+      icon: "JS",
       title: "JavaScript",
       description: "Creating interactive and dynamic web applications.",
       percentage: "80%",
       width: "80%",
     },
     {
-      icon: "◉",
+      icon: "⚛",
       title: "React",
       description: "Developing reusable and modern UI components.",
       percentage: "80%",
@@ -39,9 +39,9 @@ const Skills = () => {
       width: "75%",
     },
     {
-      icon: "▯",
+      icon: "▣",
       title: "Responsive Design",
-      description: "Designing websites that work across all screen sizes.",
+      description: "Creating websites for all screen sizes.",
       percentage: "85%",
       width: "85%",
     },
@@ -53,7 +53,7 @@ const Skills = () => {
       {/* Heading */}
       <div className="skills-heading">
         <span></span>
-        <p>My Skills</p>
+        <p>MY SKILLS</p>
       </div>
 
       <h2 className="skills-title">
@@ -65,24 +65,20 @@ const Skills = () => {
         responsive and user-friendly web applications.
       </p>
 
-      {/* Skills Grid */}
+      {/* Skills Cards */}
       <div className="skills-grid">
 
         {skills.map((skill, index) => (
           <div className="skill-card" key={index}>
 
-            {/* Icon */}
             <div className="skill-icon">
               {skill.icon}
             </div>
 
-            {/* Title */}
             <h3>{skill.title}</h3>
 
-            {/* Description */}
             <p>{skill.description}</p>
 
-            {/* Progress */}
             <div className="progress-section">
 
               <div className="progress-bar">

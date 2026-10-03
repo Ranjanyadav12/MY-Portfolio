@@ -11,11 +11,11 @@ const Navbar = ({ darkMode, changeTheme }) => {
     "skills",
     "projects",
     "experience",
-    // "education",
+    "education",
     "contact",
   ];
 
-  // Scroll karne par active section change hoga
+  // Scroll par active section
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 150;
@@ -44,7 +44,7 @@ const Navbar = ({ darkMode, changeTheme }) => {
     };
   }, []);
 
-  // Section par smooth scroll
+  // Smooth scroll
   const scrollToSection = (section) => {
     const element = document.getElementById(section);
 
@@ -69,7 +69,7 @@ const Navbar = ({ darkMode, changeTheme }) => {
         <span>&lt;/&gt;</span> Ranjan
       </div>
 
-      {/* Desktop Menu */}
+      {/* Desktop Links */}
       <div className="nav-links">
         {sections.map((section) => (
           <button
@@ -103,15 +103,15 @@ const Navbar = ({ darkMode, changeTheme }) => {
           Download Resume
         </button>
 
-      </div>
+        {/* Mobile Menu Button */}
+        <button
+          className="menu-btn"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? "✕" : "☰"}
+        </button>
 
-      {/* Mobile Menu Button */}
-      <button
-        className="menu-btn"
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        ☰
-      </button>
+      </div>
 
       {/* Mobile Menu */}
       {menuOpen && (
@@ -131,13 +131,6 @@ const Navbar = ({ darkMode, changeTheme }) => {
                 section.slice(1)}
             </button>
           ))}
-
-          <button
-            className="mobile-theme-btn"
-            onClick={changeTheme}
-          >
-            {darkMode ? "☀ Light Mode" : "☾ Dark Mode"}
-          </button>
 
         </div>
       )}
