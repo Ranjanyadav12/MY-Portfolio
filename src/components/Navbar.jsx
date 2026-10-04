@@ -99,9 +99,11 @@ const Navbar = ({ darkMode, changeTheme }) => {
         </button>
 
         {/* Resume */}
+        <a href="Resume.pdf">
         <button className="resume-btn">
           Download Resume
         </button>
+        </a>
 
         {/* Mobile Menu Button */}
         <button

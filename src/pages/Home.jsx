@@ -46,9 +46,11 @@ const Home = () => {
             View My Projects →
           </button>
 
+          <a href="Resume.pdf">
           <button className="secondary-btn">
             ↓ Download Resume
           </button>
+          </a>
 
         </div>
 
