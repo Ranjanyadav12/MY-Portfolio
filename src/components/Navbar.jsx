@@ -11,7 +11,7 @@ const Navbar = ({ darkMode, changeTheme }) => {
     "skills",
     "projects",
     "experience",
-    "education",
+    // "education",
     "contact",
   ];
 

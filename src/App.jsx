@@ -47,6 +47,7 @@ function App() {
       
 
       <Experience/>
+
       <Contact/>
 
     </div>
