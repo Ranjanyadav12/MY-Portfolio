@@ -29,14 +29,15 @@ const Contact = () => {
       return;
     }
 
-    // WhatsApp message
+    // WhatsApp message code start
     const message = `Hello Ranjan,
 
 I would like to contact you regarding your portfolio.
 
 Name: ${formData.name}
 Email: ${formData.email}
-Subject: ${formData.subject}`;
+Subject: ${formData.subject}
+Message: ${formData.message}`;
 
     // WhatsApp URL
     const whatsappURL =
@@ -44,6 +45,8 @@ Subject: ${formData.subject}`;
 
     // Open WhatsApp
     window.open(whatsappURL, "_blank");
+
+    //message code khtm
 
     setFormData({
       name: "",
